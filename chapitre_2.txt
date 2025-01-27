@@ -1,0 +1,22 @@
+
+Le process de compilation est le suivant: source C (.c) -> source assembler (.s) -> object (.o) [apres compilation] -> executable.
+
+Le command sont:
+
+`nano source.c` -- pour crier le fichier .c
+`gcc -Os source.c` -- pour cree le assembler
+`gcc -c -Os ex2.c` -- pour le creation de l'object .o
+`objdump -d -M intel ex2.o` -- pour le desassemblage du binaire.
+
+Pour le exec :
+0000000000001040 <main>:
+    1040:       31 c0                   xor    eax,eax
+    1042:       c3                      ret
+    1043:       66 2e 0f 1f 84 00 00    cs nop WORD PTR [rax+rax*1+0x0]
+    104a:       00 00 00 
+    104d:       0f 1f 00                nop    DWORD PTR [rax]
+
+Pour le .o :
+0000000000000000 <main>:
+   0:   31 c0                   xor    eax,eax
+   2:   c3                      ret
